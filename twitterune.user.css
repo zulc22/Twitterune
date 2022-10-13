@@ -1,0 +1,162 @@
+/* ==UserStyle==
+@name         Deltwitter
+@version      20221013.14.23
+@namespace    userstyles.world/user/zulc22
+@description  Twitter, styled like the "Deltarune" JRPG.
+@author       zulc22
+@license      0BSD
+==/UserStyle== */
+
+@-moz-document domain("twitter.com") {
+/* Twitterune by zulc22, 2022 */
+
+/* Awesome border */
+.css-1dbjc4n article, .css-1dbjc4n.r-yfoy6g.r-1f1sjgu, [role="dialog"].r-1potc6q {
+    border: 16px solid transparent;
+    background: black; background-clip: padding-box;
+    margin: 8px;
+    border-image: 16 round url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEVjb2wAAAABAQGsrrSs/uT8/vxYyzAWAAAAAXRSTlMAQObYZgAAAKxJREFUOMvtlEEOwyAMBJFSHtAvGOUeseLeJ6Ag//8rJQohdhWj9NZD9wYjbEvs2rmRvD7mEyzyfhIAEqAD5iJBYj4eFLAQUj56eQ1ym4YfHkr5tddiF0Kgrhij24DnwsB6ghngxLUNCiiSUCCkbf6pViWlerHs084arG1eX6IGoQP60D3wbPqD3wDf/aBphmv7mIazLGqb2orBIDhm1Mxw2nE2F8BgZVhL5kpv0g+Ab47NTM8AAAAASUVORK5CYII=);
+}
+
+/* QRT */
+.r-1867qdf {
+    border: 2px solid white;
+    padding: 2px;
+    background: black; background-clip: padding-box;
+    border-radius: 0;
+}
+.r-1s2bzr4 {
+    margin: 5px 5px 0px 5px;
+}
+.r-6gpygo {
+    margin: 0px 5px 5px 29px;
+}
+.r-1ah4tor { /* Fix PFPs on notifications page */
+    margin-left: 0px;
+    margin-top: 6px;
+}
+.r-14gqq1x {
+    margin: 0;
+}
+
+/* Remove padding around tweets */
+.r-ttdzmv, .css-1dbjc4n article, .r-zl2h9q, .css-1dbjc4n .r-4qtqp9 .r-zl2h9q, .css-1dbjc4n.r-xoduu5.r-xyw6el.r-mk0yit.r-13qz1uu {
+    padding: 0 0 0 0;
+}
+
+/* Default font */
+.r-37j5jr, .css-901oao {
+    font-family: Determination Mono Web;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    text-shadow: 1px 1px 0 #0c0e74;
+}
+
+/* Twemoji */
+.r-h9hxbl {
+    position: relative; height: 13px; top: -2px; width: 12px;
+}
+
+.r-13hce6t { /* Space inbtwn Nickname and @ */
+    margin-left: 8px;
+}
+
+.r-qklmqi {
+    border-bottom-width: 0;
+}
+
+[aria-hidden=true] .r-qvutc0 { /* Little dot btwn @ and timestamp */
+    padding: 3px;
+}
+
+.r-sdzlij { border-radius: 0px; } /* SQUARES, BITCHES !!! */
+
+/* PFP in 'Tweet your reply' box */
+.r-1b7u577.r-1h8ys4a div div div div div div .r-417010 {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAkAgMAAACyK1GZAAAACVBMVEUAAAcAAAD/AAD4XOOjAAAAAXRSTlMAQObYZgAAAFNJREFUGNPN0CsWwDAIRNEx2V/MM9lfDass+bQ5BFVXDHM5o5BUQIKqPgHYVUszEnwbmF8SzIMf7CPG/BHMTMLTW38LYLciZm/lA+xWRO+9+QBk3DcnlhV1akJYAAAAAElFTkSuQmCC);
+    left: -6px;
+    background: black;
+}
+
+[data-testid="toolBar"], .r-yfoy6g:not([data-testid="primaryColumn"]):not([aria-label="Timeline: Conversation"]>div>div>div>div>div) { /* fix weird backgrounds */
+    background: black;
+    background-clip: padding-box;
+}
+
+/* Reply chain line. */
+/* TODO:
+    Make selector NOT apply to tweets with the "Show this thread" thing on it
+    Make selector NOT show above the "... Show replies" thing on long threads
+*/
+
+/* Repl chain, top */
+article * [data-testid="Tweet-User-Avatar"] + .r-m5arl1::after {
+    position: fixed;
+    bottom: -72.5px;
+    left: 39px;
+    display: block;
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAABeBAMAAADcellzAAAAD1BMVEVldC0BAQFCU2SsrrT8/vxpyJXsAAAAAXRSTlMAQObYZgAAAEFJREFUKM9jYAACJQYYoCbL2FBQUElQUNiYwQXKchlljbKGFYuBEcwSYMAq5gBlsSCJMTCAWQyoAJsYI1BMAFkAAAb4XfiywfIEAAAAAElFTkSuQmCC);
+}
+
+/* Repl chain line, bottom */
+article div[class='css-1dbjc4n r-1hwvwag r-18kxxzh r-15zivkp r-1b7u577'] {
+    position: fixed;
+    top: 6px;
+    left: 39px;
+    display: block;
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAYAAADphp8SAAAASUlEQVQ4y2P48+/P/z///vxfs27Lf0ZGRgzsFJzy3yk4BavcmnVb/sP0MzFQCYwaNKINYtmwYQdFBsD0s4QG+5JtCLLe0VgjDAD2qiotylT/QAAAAABJRU5ErkJggg==)
+}
+
+/* Repl chain line in reply modal */
+[role=dialog] * .r-m5arl1 {
+    display: none;
+}
+
+/* RT, like icons in notifs */
+.r-yucp9h {
+    top: 5px;
+    right: 7px;
+}
+
+/* Twitter logo, topleft of page */
+[aria-label="Twitter"] span {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAeAgMAAADfpp+EAAAACVBMVEVHAHkAAAD///9A3jTkAAAAAXRSTlMAQObYZgAAAKJJREFUGNM1jrERwyAMRUURNkjhbTyCi3zdmdouomnckAlMAVNGXyEquIfu6UsiD4g8X+JVxpasryKp4c5VL5EM7DtwiCyANv8FsZzOGvRZ5TSCqdNwSwd72ksvjb0ybFgngVSdFpTS3zNvJudf8kFS4CSlWio6LpI1HSSP8fKQeczO6zNscCBGYoCittBCDC22HD9KdWoU10nL1Fy8/5Q2vl+ti0dmq9VtkwAAAABJRU5ErkJggg==);
+    width: 33px; height: 30px;
+    position: relative; right: 0px;
+}
+[aria-label="Twitter"] svg { display: none; }
+
+/* '...' icon, topright on tweets */
+.r-1joea0r { height: 16px; }
+.r-1joea0r svg { top: -3px; transform: scale(0.6) }
+
+/* Tweet text */
+div[data-testid=tweetText]::before {
+    display: block;
+    position: absolute;
+    left: -2ch;
+    content: "* ";
+}
+
+[data-testid="tweetTextarea_0RichTextInputContainer"]::before {
+    display: block;
+    position: absolute;
+    content: "* ";
+}
+
+[data-testid="tweetTextarea_0RichTextInputContainer"] > div {
+    top: -2px;
+}
+
+.public-DraftEditorPlaceholder-inner::before {
+    content: "* ";
+}
+
+div[data-testid=tweetText], .public-DraftStyleDefault-block {
+    position: relative;
+    display: block;
+    left: 2ch;
+    width: calc(100% - 2ch);
+}
+}
