@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Deltwitter
-@version      20221013.14.23
+@version      20221014
 @namespace    userstyles.world/user/zulc22
 @description  Twitter, styled like the "Deltarune" JRPG.
 @author       zulc22
@@ -57,8 +57,12 @@
 }
 
 /* Twemoji */
-.r-h9hxbl {
+.r-h9hxbl, .r-f9ja8p {
     position: relative; height: 13px; top: -2px; width: 12px;
+}
+
+.r-f9ja8p {
+    top: 0px; left: 2px;
 }
 
 .r-13hce6t { /* Space inbtwn Nickname and @ */
@@ -93,22 +97,28 @@
     Make selector NOT show above the "... Show replies" thing on long threads
 */
 
+/* Repl chain: hide 3 dots next to "show replies" */
+.r-m5arl1 { display: none; }
+article * [data-testid="Tweet-User-Avatar"] + .r-m5arl1 {
+    display: inherit;
+}
+
 /* Repl chain, top */
 article * [data-testid="Tweet-User-Avatar"] + .r-m5arl1::after {
     position: fixed;
-    bottom: -72.5px;
+    bottom: -16.5px;
     left: 39px;
     display: block;
-    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAABeBAMAAADcellzAAAAD1BMVEVldC0BAQFCU2SsrrT8/vxpyJXsAAAAAXRSTlMAQObYZgAAAEFJREFUKM9jYAACJQYYoCbL2FBQUElQUNiYwQXKchlljbKGFYuBEcwSYMAq5gBlsSCJMTCAWQyoAJsYI1BMAFkAAAb4XfiywfIEAAAAAElFTkSuQmCC);
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAmBAMAAAA7C9bfAAAAElBMVEVldABldC0BAQFCU2SsrrT8/vzSYCvIAAAAAXRSTlMAQObYZgAAADxJREFUGNNjYAACYwYYoCbLxUlJyVhJScWFIRTKCh1CLAYmMEuBAatYAJTFiiTGwABmMaACbGJMQDGgBgAOAStejurM/AAAAABJRU5ErkJggg==);
 }
 
 /* Repl chain line, bottom */
 article div[class='css-1dbjc4n r-1hwvwag r-18kxxzh r-15zivkp r-1b7u577'] {
     position: fixed;
-    top: 6px;
+    top: -13px;
     left: 39px;
     display: block;
-    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAYAAADphp8SAAAASUlEQVQ4y2P48+/P/z///vxfs27Lf0ZGRgzsFJzy3yk4BavcmnVb/sP0MzFQCYwaNKINYtmwYQdFBsD0s4QG+5JtCLLe0VgjDAD2qiotylT/QAAAAABJRU5ErkJggg==)
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAiCAYAAABStIn6AAAAmElEQVRIx+2SMQ6DMAxFvy1fjL1daHuCnqs3QBEDAxsXs+JOQbRqgyBBYrCnSMl/evkJ4ccQkaV10z4BAFN4zftmRjhqKGfzz+hQq2pGnINkDb7Oska10mtpVGNhKS5NWIg1qmlU68Kw2awLg6W8LI22dAQA9/ZCHx3VMOJa/8hBDnKQg84Ckr4fiwApL4/bdTdkmfVXW5834V1TPnz+frkAAAAASUVORK5CYII=)
 }
 
 /* Repl chain line in reply modal */
@@ -161,5 +171,12 @@ div[data-testid=tweetText], .public-DraftStyleDefault-block {
     display: block;
     left: 2ch;
     width: calc(100% - 2ch);
+}
+
+/* Icons */
+[data-testid="retweet"] {
+    
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgoKPHN2ZwogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmcyNTc5IgogICB3aWR0aD0iMjAiCiAgIGhlaWdodD0iMjAiCiAgIHZpZXdCb3g9IjAgMCAyMCAyMCIKICAgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIKICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcwogICAgIGlkPSJkZWZzMjU4MyIgLz48ZwogICAgIGlkPSJnMjU4NSI+PHBhdGgKICAgICAgIHN0eWxlPSJzdHJva2Utd2lkdGg6MC4xIgogICAgICAgZD0ibSAxLDE5LjUwMDAwMSB2IC0wLjUgSCAwLjUgMCB2IC05IFYgMSBIIDAuNSAxIFYgMC41MDAwMDAwNCAwIEggOS45OTk5OTk4IDE5IFYgMC41MDAwMDAwNCAxIGggMC41IDAuNSB2IDkuMDAwMDAxIDkgSCAxOS41IDE5IHYgMC41IDAuNSBIIDkuOTk5OTk5OCAxIFogbSAxNywtOS41IFYgMiBIIDkuOTk5OTk5OCAyIHYgOC4wMDAwMDEgOCBIIDkuOTk5OTk5OCAxOCBaIG0gLTEzLDIgViA4IEggNCAzIFYgNy41IDcgSCAzLjUgNCBWIDYuNSA2IEggNC41IDUgViA1LjUgNSBIIDUuNSA2IFYgNC41IDQgSCA2LjUgNyBWIDQuNSA1IEggNy41IDggViA0LjUgNCBoIDMuNSAzLjUgdiA0IDQuMDAwMDAxIGggMSAxIHYgMC41IDAuNSBIIDE2LjUgMTYgdiAwLjUgMC41IEggMTUuNSAxNSB2IDAuNSAwLjUgSCAxNC41IDE0IHYgMC41IDAuNSBIIDEzLjUgMTMgdiAtMC41IC0wLjUgSCAxMi41IDEyIHYgMC41IDAuNSBIIDguNSA1IFogbSA3LDIuNSB2IC0wLjUgSCAxMS41IDExIHYgLTAuNSAtMC41IEggMTAuNSA5Ljk5OTk5OTggdiAtMC41IC0wLjUgSCAxMSAxMiBWIDkuNTAwMDAwNCA3IEggMTEgOS45OTk5OTk4IFYgNi41IDYgSCA5LjUgOSBWIDUuNSA1IEggOC41IDggViA1LjUgNiBIIDguNSA5IFYgNi41IDcgSCA5LjUgOS45OTk5OTk4IFYgNy41IDggSCA5IDggdiAyLjUwMDAwMSAyLjUgaCAxIDAuOTk5OTk5OCB2IDAuNSAwLjUgSCAxMC41IDExIHYgMC41IDAuNSBoIDAuNSAwLjUgeiIKICAgICAgIGlkPSJwYXRoOTA3OTAiIC8+PC9nPjwvc3ZnPgo=);
+    
 }
 }
