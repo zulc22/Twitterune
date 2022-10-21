@@ -3,7 +3,11 @@ CSS Userstyle for Twitter, mimicing Deltarune's dialog visuals
 
 ![](preview.png)
 
-To use userCSS themes, you need to have the [Stylus extension installed on your browser](https://github.com/openstyles/stylus#releases).
+To use userCSS themes, you need to have the [Stylus extension](https://github.com/openstyles/stylus#releases) installed on your browser. (Click on 'Chrome Web Store' on their page for Chrome, 'Firefox add-ons' for Firefox)
+
+Be aware that I only test this theme on Firefox; if you have any specific problems make sure to look in the [GitHub Issue tracker for this repo](https://github.com/zulc22/Twitterune/issues). Currently the custom buttons do not work at all in Chromium browsers (and I do not know how to fix it).
+
+Make sure to set your Twitter theme to Dim or Lights Out with the theme applied for it to look right. (Click on "More"/the three dots on the left, Settings and Support, then Display to change it.)
 
 Install the userCSS [directly from the repo](https://github.com/zulc22/Twitterune/raw/main/twitterune.user.css), or alternatively, there is [a userstyles.world page for this theme](https://userstyles.world/style/6884/twitterune).
 
